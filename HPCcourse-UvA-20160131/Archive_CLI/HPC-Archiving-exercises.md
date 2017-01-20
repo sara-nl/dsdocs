@@ -22,6 +22,7 @@ General syntax:
 General tips:
 
 - Using the tar command: combine multiple options into a single argument, e.g. `-a -b -c` becomes `-abc`
+- Please note that the `-f` option should always be right in front of the file, even when combining the different options
 
 ## Part 1: Basic tar usage (10 min)
 
@@ -161,26 +162,32 @@ tar -xf /archive/<username>/data.tar
 
 ### Exercise 2. (bonus)
 
-**Task: Unpack the contents of the file `data.tar` located in the home folder of your archive service to a directory called `new`**
-
 Before you can start copying or extracting data from the archive service directly, you need to stage the data from tape to the archive disk cache. The data migration (DM) tools can be used which are available on the Cartesius, Lisa and archive systems.
 
-Copying and extracting will work without staging but can potentially take a huge amount of time when dealing with many files. So remember, when working directly with data stored on the archive, first stage it!
+Copying and extracting will work without staging but can potentially take a huge amount of time when dealing with many files and potentially wasting a lot of core hours. So remember, when working directly with data stored on the archive, first stage it!
 
-For the Lisa cluster, you first need to load a module containing the dmget tool:
+The right tool to stage your data on the archive is dmget, which has the following syntax:
+
+```
+dmget [options] <file or folder or wildcard>
+```
+
+If you use the `-a` option, your data will be staged for a longer time and you can therefore use it more often without requiring to stage the data again. For the Lisa cluster, you first need to load a module containing the dmget tool:
 
 ```
 module load rdmf
 ```
 
-Hint: add an option that changes the directory.
+**Task: Unpack the contents of the file `data-stage.tar` located in the home folder of the Data Archive to a directory called `new`**
+
+Hint: look for an option that changes the directory.
 
 ##### Solution
 
 Staging:
 
 ```
-dmget -a /archive/<user>/data-files.dmftar
+dmget -a /archive/<user>/data-stage.tar
 ```
 
 Extraction: use the `-C` option. First create the directory if it doesn't exist yet!
@@ -204,7 +211,7 @@ The dmftar tool is invoked by entering `dmftar` as a command. It is available to
 module load dmftar
 ```
 
-Now go to the data directory for the dmftar excercises and inspect its contents.
+Now go to the data directory for the dmftar excercises (`~/dmftar`) and inspect its contents.
 
 ### Exercise 3.a. Show the options of dmftar
 
