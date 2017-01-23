@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the hands-on part of archiving data using tar or dmftar in combination with the Data Archive of SURFsara. After finishing the module, you will have learned how to use the archiving tools to archive your data.
+Welcome to the hands-on part of archiving data using tar or dmftar in combination with the Data Archive of SURFsara. After finishing the module, you will have learned how to use the archiving tools to archive your data efficiently.
 
 The module consists of two parts:
 
@@ -11,9 +11,9 @@ The module consists of two parts:
 
 Each part has several excercises and will take approximately 10 minutes each. For those who are faster, several extra bonus exercises are provided which will educate more advanced usage of the tools.
 
-Most exercises provide hints and additional questions to answer for yourself.
+Most exercises provide hints and additional questions to answer for yourself. Please read these carefully so you understand what you are doing!
 
-Every exercise's files are located in separate directories, e.g. the files of Exercise 1 are stored in folder `~/tar/exercise-1`, while the files of Exercise 4 are stored in `~/dmftar/exercise-4`. Make sure to go to these folders before starting the respective exercises.
+Every exercise's files are located in separate directories, e.g. the files of Exercise 1 are stored in folder `~/tar/exercise-1`, while the files of Exercise 4 are stored in `~/dmftar/exercise-4`. Make sure to go to these folders before starting the respective exercises. All files on the archive service are stored in your home folder (i.e. `/archive/<username>`).
 
 #### General command syntax
 
@@ -21,12 +21,12 @@ Every exercise's files are located in separate directories, e.g. the files of Ex
 ```tar [OPTIONS] <tarball> <input-files..>```
 
 - dmftar:
-```dmftar [OPTIONS] <dmftar-archive> <input-files>```
+```dmftar [TASK] [OPTIONS] -f <dmftar-archive> <input-files>```
 
 #### Tips
 
 - Using the commands: combine multiple options into a single argument, e.g. `-a -b -c` becomes `-abc`
-- Please note that the `-f` option should always be right in front of the file, even when combining the different options
+- Please note that the `-f` option should always be right in front of the archive file, even when combining the different options (i.e. `-fc` will not work)
 
 ## Part 1: Basic tar usage (10 min)
 

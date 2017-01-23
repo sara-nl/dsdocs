@@ -6,7 +6,7 @@ Welcome to the hands-on part of archiving data using tar or dmftar in combinatio
 
 ## Part 1: Basic tar usage
 
-All exercises are done from the `~/tar` folder in your home folder.
+All exercises are done in the exercise-specific directories in the `~/tar` folder located in your home folder on Lisa.
 
 ### Exercise 1.a: The options of tar
 
@@ -48,7 +48,7 @@ tar -cf data-filelist.tar -T files.lst
 
 ## Part 2: Extracting tarballs (10 min)
 
-All exercises are done from the `~/tar` folder in your home folder.
+All exercises are done in the exercise-specific directories in the `~/tar` folder located in your home folder on Lisa.
 
 ### Exercise 2.a: List the contents of a tarball
 
@@ -89,7 +89,7 @@ tar -xf /archive/<username>/data.tar -C new
 
 ## Part 3: Basic dmftar usage (10 min)
 
-All exercises are done from the `~/dmftar` folder in your home folder.
+All exercises are done in the exercise-specific directories in the `~/dmftar` folder located in your home folder on Lisa.
 
 ### Exercise 3.a. Show the options of dmftar
 
@@ -125,7 +125,7 @@ dmftar -V -f data.dmftar
 
 ## Part 4: Extracting dmftar archives (10 min)
 
-All exercises are done from the `~/dmftar` folder in your home folder.
+All exercises are done in the exercise-specific directories in the `~/dmftar` folder located in your home folder on Lisa.
 
 ### Exercise 4.a. List the contents of an dmftar archive
 
@@ -161,7 +161,7 @@ dmftar -x -f archived-data.dmftar data2/
 
 ## Part 5: Direct archive usage with dmftar (10 min)
 
-All exercises are done from the `~/dmftar` folder in your home folder.
+All exercises are done in the exercise-specific directories in the `~/dmftar` folder located in your home folder on Lisa.
 
 ### Exercise 5.a: Archive directly to the archive service
 
