@@ -16,7 +16,7 @@ Enter the command, optionally followed by an option showing additional help, e.g
 tar --help
 ```
 
-### Exercise 1.b. Pack files into a tar file
+### Exercise 1.b. Pack files into a tarball
 
 Use the file names as argument with the `-c` option:
 
@@ -30,7 +30,7 @@ Alternatively use a wildcard to shorten the command:
 tar -cf data-files.tar data*.dat
 ```
 
-### Exercise 1.c. Pack a directory into a tar file
+### Exercise 1.c. Pack a directory into a tarball
 
 Use the directory name as an argument:
 
@@ -107,7 +107,7 @@ Use the `-c` option:
 dmftar -c -f data.dmftar data/
 ```
 
-### Exercise 3. (bonus) Investigate the contents of a dmftar archive folder
+### Exercise 3. (bonus) Investigate the contents of a dmftar archive
 
 Directly list the folder contents using the `ls` tool:
 
@@ -135,7 +135,7 @@ Use the `-t` option:
 dmftar -t -f archived-data.dmftar
 ```
 
-### Exercise 4.b. Unpack an archive folder
+### Exercise 4.b. Unpack a dmftar archive
 
 Use the `-x` option:
 
@@ -143,7 +143,7 @@ Use the `-x` option:
 dmftar -x -f archived-data.dmftar
 ```
 
-### Exercise 4. (bonus) Unpack only a single file from an archive folder
+### Exercise 4. (bonus) Unpack only a single file from a dmftar archive
 
 Add the file name and folder as the last argument in the command:
 
@@ -151,7 +151,7 @@ Add the file name and folder as the last argument in the command:
 dmftar -x -f archived-data.dmftar data1/data1-1.dat
 ```
 
-### Exercise 4. (bonus) Unpack a specific directory from an archive folder
+### Exercise 4. (bonus) Unpack a specific directory from a dmftar archive
 
 Solely add the subdirectory name:
 
@@ -176,7 +176,7 @@ dmftar -c -f /archive/<username>/data-files.dmftar data*.dat
 Extraction is done using the `-x` option with the mounted folder path `/archive/<username>`:
 
 ```
-dmftar -x -f /archive/<username>/data-files.dmftar 
+dmftar -x -f /archive/<username>/data-files.dmftar
 ```
 
 ### Bonus excercise: using dmftar with remote servers

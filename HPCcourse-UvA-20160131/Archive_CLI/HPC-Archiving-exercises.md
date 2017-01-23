@@ -51,13 +51,13 @@ Hint: add an option to the command in order to list the possibilities of the too
  - Adding the `--usage` option
  - Adding the `--help` option
  - Using the `man` pages
-- What is a smart strategy to look for specific functionality in a tool? 
+- What is a smart strategy to look for specific functionality in a tool?
 
 ### Exercise 1.b. Pack files into a tarball
 
-**Task: Pack the files `data1.dat`, `data2.dat` and `data3.dat` into the tar file `data-files.dat`**
+**Task: Pack the files `data1.dat`, `data2.dat` and `data3.dat` into tarball `data-files.dat`**
 
-To pack some files into a single tar file, the tar command is used followed by some options and these file names as arguments.
+To pack some files into a single tarball, the tar command is used followed by some options and these file names as arguments.
 
 Hints:
 
@@ -70,7 +70,7 @@ Hints:
 
 ### Exercise 1.c. Pack a directory into a tarball
 
-**Task: Pack the directory `data` into tar file `data-directory.tar`**
+**Task: Pack the directory `data` into tarball `data-directory.tar`**
 
 In order to pack several files stored in a directory, the tar command can be invoked by supplying the directory name as an argument.
 
@@ -82,7 +82,7 @@ Hint: use the command used in the previous excercise and replace the file name w
 
 ### Exercise 1. (bonus) Pack by file list
 
-**Task: Pack the files specified in the file list named `files.lst` to tar file `data-filelist.tar`**
+**Task: Pack the files specified in the file list named `files.lst` into tarball `data-filelist.tar`**
 
 In some cases it might be useful to pack some files defined by a file list given by a specific file.
 
@@ -134,7 +134,7 @@ The right tool to stage your data on the archive is dmget, which has the followi
 dmget [options] <file or folder or wildcard>
 ```
 
-If you use the `-a` option, the access time of the file will be updated and therefore your data will be staged for a longer time. You can therefore use it more often without requiring to stage the data again. 
+If you use the `-a` option, the access time of the file will be updated and therefore your data will be staged for a longer time. You can therefore use it more often without requiring to stage the data again.
 
 For the Lisa cluster, you first need to load a module containing the dmget tool:
 
@@ -190,7 +190,7 @@ Hint: look for the create option.
 
 - Where is the archived data stored?
 
-### Exercise 3. (bonus) Investigate the contents of a dmftar archive folder
+### Exercise 3. (bonus) Investigate the contents of a dmftar archive
 
 **Task: List the contents of the newly created dmftar folder using standard Linux tools.**
 
@@ -205,7 +205,7 @@ To understand the actual contents of a dmftar archive it is useful to have a loo
 
 ### Exercise 3. (bonus) Verify your archive
 
-**Task: Verify the contents of the archive folder `data.dmftar` on the bit-level**
+**Task: Verify the contents of the dmftar archive `data.dmftar` on the bit-level**
 
 An important aspect of data archiving is data integrity. The archiving facility of SURFsara automatically checks the data stored on tape by comparing files every once in a while.
 
