@@ -6,12 +6,16 @@ Welcome to the hands-on part of archiving data using tar or dmftar in combinatio
 
 The module consists of two parts:
 
-- Archiving using tar: learn to create and extract tarballs (tar archive files)
+- Archiving using tar: learn to create, list and extract tarballs (tar archive files)
 - Archiving using dmftar: learn to create and extract dmftar archives, either locally or on the Data Archive service
 
 Each part has several excercises and will take approximately 10 minutes each. For those who are faster, several extra bonus exercises are provided which will educate more advanced usage of the tools.
 
-General syntax:
+Most exercises provide hints and additional questions to answer for yourself.
+
+Every exercise's files are located in separate directories, e.g. the files of Exercise 1 are stored in folder `~/tar/exercise-1`, while the files of Exercise 4 are stored in `~/dmftar/exercise-4`. Make sure to go to these folders before starting the respective exercises.
+
+#### General command syntax
 
 - tar:
 ```tar [OPTIONS] <tarball> <input-files..>```
@@ -19,9 +23,9 @@ General syntax:
 - dmftar:
 ```dmftar [OPTIONS] <dmftar-archive> <input-files>```
 
-General tips:
+#### Tips
 
-- Using the tar command: combine multiple options into a single argument, e.g. `-a -b -c` becomes `-abc`
+- Using the commands: combine multiple options into a single argument, e.g. `-a -b -c` becomes `-abc`
 - Please note that the `-f` option should always be right in front of the file, even when combining the different options
 
 ## Part 1: Basic tar usage (10 min)
@@ -30,7 +34,7 @@ Learn how to explore the basic options of tar and to pack a file or directory.
 
 The tar tool is invoked by entering `tar` as a command, and is available to all users and in all directories.
 
-First go to the tar excercise directory `~/tar` and inspect its contents.
+First go to the tar excercise directory `~/tar/exercise-1` and inspect its contents.
 
 ### Exercise 1.a: The options of tar
 
@@ -39,14 +43,6 @@ First go to the tar excercise directory `~/tar` and inspect its contents.
 As with every new tool, you'll need to learn how to use it and to make it do something the way you want it to do it. Therefore a first step is to investigate the tool's options by requesting additional information.
 
 Hint: add an option to the command in order to list the possibilities of the tool.
-
-##### Solution
-
-Enter the command, optionally followed by an option showing additional help, e.g.:
-
-```
-tar --help
-```
 
 ##### Questions
 
@@ -57,7 +53,7 @@ tar --help
  - Using the `man` pages
 - What is a smart strategy to look for specific functionality in a tool? 
 
-### Exercise 1.b. Pack files into a tar file
+### Exercise 1.b. Pack files into a tarball
 
 **Task: Pack the files `data1.dat`, `data2.dat` and `data3.dat` into the tar file `data-files.dat`**
 
@@ -68,19 +64,11 @@ Hints:
 - Look for the create option
 - Make sure the correct order of arguments are used and all required options are added.
 
-##### Solution
-
-Use the file names as argument:
-
-```
-tar -cf data-files.tar data1.dat data2.dat data3.dat
-```
-
 ##### Questions
 
 - Can the file names be combined into a single argument?
 
-### Exercise 1.c. Pack a directory into a tar file
+### Exercise 1.c. Pack a directory into a tarball
 
 **Task: Pack the directory `data` into tar file `data-directory.tar`**
 
@@ -88,17 +76,9 @@ In order to pack several files stored in a directory, the tar command can be inv
 
 Hint: use the command used in the previous excercise and replace the file name with a directory name.
 
-##### Solution
-
-Use the directory name as an argument:
-
-```
-dmftar -cf data-directory.tar data/
-```
-
 ##### Questions
 
-- What happens to the archive file if you run the command twice?
+- What happens to the existing tarball if you run the command twice?
 
 ### Exercise 1. (bonus) Pack by file list
 
@@ -108,14 +88,6 @@ In some cases it might be useful to pack some files defined by a file list given
 
 Hint: use the command used in the previous excercise followed by an extra argument.
 
-##### Solution
-
-Use the `-T` option:
-
-```
-tar -cf data-filelist.tar -T files.lst
-```
-
 ##### Questions
 
 - Can you add multiple file lists as input?
@@ -124,7 +96,7 @@ tar -cf data-filelist.tar -T files.lst
 
 Learn how to inspect and unpack an existing archive file.
 
-Make sure to first go to the correct directory and inspect its contents.
+Make sure to first go to the correct exercise directory and inspect its contents.
 
 ### Exercise 2.a: List the contents of an archive
 
@@ -134,13 +106,8 @@ Before extracting any files from a tarball, it might be useful to inspect its co
 
 Hint: look for the list option.
 
-##### Solution
-
-Use the `-t` option:
-
-```
-tar -tf data.tar
-```
+##### Questions
+- What happens if you add the `-v` option to your command?
 
 ### Exercise 2.b. Unpack an archive
 
@@ -148,23 +115,18 @@ tar -tf data.tar
 
 Hint: look for the extract option.
 
-##### Solution
-
-Use the `-x` option with tar:
-
-```
-tar -xf /archive/<username>/data.tar
-```
-
 ##### Questions
 
-- Where is the extracted data stored?
+- Where are the extracted files now stored?
 
 ### Exercise 2. (bonus)
 
+##### Introduction
+In many cases, your data will be stored on the Data Archive service of SURFsara under your own account.
+
 Before you can start copying or extracting data from the archive service directly, you need to stage the data from tape to the archive disk cache. The data migration (DM) tools can be used which are available on the Cartesius, Lisa and archive systems.
 
-Copying and extracting will work without staging but can potentially take a huge amount of time when dealing with many files and potentially wasting a lot of core hours. So remember, when working directly with data stored on the archive, first stage it!
+Copying and extracting will work without staging but can potentially take a huge amount of time when dealing with many files at the same time and potentially wasting a lot of core hours. So remember, when working directly with data stored on the archive, first stage it!
 
 The right tool to stage your data on the archive is dmget, which has the following syntax:
 
@@ -172,30 +134,19 @@ The right tool to stage your data on the archive is dmget, which has the followi
 dmget [options] <file or folder or wildcard>
 ```
 
-If you use the `-a` option, your data will be staged for a longer time and you can therefore use it more often without requiring to stage the data again. For the Lisa cluster, you first need to load a module containing the dmget tool:
+If you use the `-a` option, the access time of the file will be updated and therefore your data will be staged for a longer time. You can therefore use it more often without requiring to stage the data again. 
+
+For the Lisa cluster, you first need to load a module containing the dmget tool:
 
 ```
 module load rdmf
 ```
 
-**Task: Unpack the contents of the file `data-stage.tar` located in the home folder of the Data Archive to a directory called `new`**
+##### Exercise
+
+**Task: Unpack the contents of the file `data-stage.tar` located in the home folder of the Data Archive to a directory called `new` in your Lisa account**
 
 Hint: look for an option that changes the directory.
-
-##### Solution
-
-Staging:
-
-```
-dmget -a /archive/<user>/data-stage.tar
-```
-
-Extraction: use the `-C` option. First create the directory if it doesn't exist yet!
-
-```
-mkdir new
-tar -xf data.tar -C new
-```
 
 ##### Questions
 
@@ -219,15 +170,7 @@ Now go to the data directory for the dmftar excercises (`~/dmftar`) and inspect 
 
 Hint: add an option to the command in order to list the possibilities of the tool.
 
-##### Solution
-
-Enter the command, optionally followed by an option showing additional help.
-
-```
-dmftar --help
-```
-
-Questions:
+##### Questions
 
 - Which options are available to get additional help?
 - Are there any man pages available?
@@ -237,19 +180,11 @@ Questions:
 
 ### Exercise 3.b. Pack a directory
 
-**Task: Pack the directory `data` in the dmftar excersises directory into a dmftar archive called `data.dmftar`**
+**Task: Pack the directory `data` in into a dmftar archive called `data.dmftar`**
 
 dmftar can easily process the contents of entire directories compared to the more file-oriented nature of tar. Therefore the tool is mostly used to pack individual directories.
 
 Hint: look for the create option.
-
-##### Solution
-
-Use the `-c` option:
-
-```
-dmftar -c -f data.dmftar data/
-```
 
 ##### Questions
 
@@ -260,12 +195,6 @@ dmftar -c -f data.dmftar data/
 **Task: List the contents of the newly created dmftar folder using standard Linux tools.**
 
 To understand the actual contents of a dmftar archive it is useful to have a look at which files are actually stored in the folders.
-
-##### Solution
-
-```
-ls -l data.dmftar/0000
-```
 
 ##### Questions
 
@@ -284,106 +213,81 @@ Archived folders created using dmftar can be verified based on a checksum that i
 
 Hint: look for the verify option.
 
-##### Solution
+##### Questions
 
-Add the `-V` option:
-
-```
-dmftar -V -f data.dmftar
-```
+- What is the ouput of the command?
+- Can you be sure you data's integrity is intact?
 
 ## Part 4: Extracting dmftar archives (10 min)
 
-Learn how to inspect and unpack an existing archive folder using dmftar.
+Learn how to inspect and unpack an existing dmftar archive using dmftar.
+
+When using the dmftar tool instead of tar, the underlying storage infrastructure is no longer of concern since dmftar will automatically detect whether a file is stored on disk or on tape. This saves you the burden to recall all files using separate commands and can improve the execution time of your data processing commands by several orders of magnitude.
+
+For the Lisa cluster, you first need to load a module containing the tool:
+
+```
+module load dmftar
+```
+
+The dmftar tool is now available throughout the system and will remain so during your login session.
 
 ### Exercise 4.a. List the contents of an dmftar archive
 
-**Task: List the contents of the archive folder `archived-data.dmftar`**
+**Task: List the contents of the dmftar archive `archived-data.dmftar`**
 
 Hint: look for the list option.
-
-##### Solution
-
-Use the `-t` option:
-
-```
-dmftar -t -f archived-data.dmftar
-```
 
 ##### Questions
 
 - What type of contents can be seen in the dmftar archive?
 - What is the alternative for option `-t`?
+- Does adding the `-v` option change anything to the output?
+- How can you search for a specific file in the archive?
 
-### Exercise 4.b. Unpack an archive folder
+### Exercise 4.b. Unpack a dmftar archive
 
-**Task: Unpack the contents of the archive folder `archived-data.dmftar`**
+**Task: Unpack the contents of the dmftar archive `archived-data.dmftar`**
 
 Hint: look for the extract option.
-
-##### Solution
-
-Use the `-x` option:
-
-```
-dmftar -x -f archived-data.dmftar
-```
 
 ##### Questions
 
 - Which files and folder are created?
 
-### Exercise 4. (bonus) Unpack only a single file from an archive folder
-
-**Task: Unpack the file `data1-1.dat` from the archive file `archived-data.dmftar`**
+### Exercise 4. (bonus) Unpack only a single file from a dmftar archive
 
 Sometimes it is useful to only unpack specific files or folders from an archive file. Using dmftar this is easily accomplished by adding the file name or a name pattern as an argument to the command.
+
+**Task: Unpack the file `data1-1.dat` from the dmftar archive `archived-data.dmftar`**
 
 Hints:
 
 - Use the `--help` option to learn how to add a file extraction pattern.
 - Investigate in what subdirectory the file is located.
 
-##### Solution
-
-Add the file name and folder as the last argument in the command:
-
-```
-dmftar -x -f archived-data.dmftar data1/data1-1.dat
-```
-
 ##### Questions
 
 - Can you extract the file by only adding the file name?
-- Where is the extracted file stored?
+- In what folder is the extracted file stored?
 
-### Exercise 4. (bonus) Unpack a specific directory from an archive folder
+### Exercise 4. (bonus) Unpack a specific directory from an dmftar archive
 
-**Task: Repeat the previous bonus excercise to extract all files in the subdirectory `data2` in the archive folder `archived-data.dmftar`**
-
-##### Solution
-
-Solely add the subdirectory name:
-
-```
-dmftar -x -f archived-data.dmftar data2/
-```
+**Task: Repeat the previous bonus excercise to extract all files in the subdirectory `data2` in the dmftar archive `archived-data.dmftar`**
 
 ## Part 5: Direct archive usage with dmftar (10 min)
 
-In many cases the dmftar archives are stored in your home folder on the archive service. Either to offload the file system on Cartesius or Lisa, or to store the files for the long term.
+In many cases the dmftar archives are stored somewhere in your home folder on the Data Archive service, either to offload the file system on Cartesius or Lisa, or to store the files for the long term.
 
-In following excercises you'l learn to directly store and extract data files using the archive service. Since the archive service is based on a tape infrastructure, all files stored there need to be staged first before they can be used.
+In following excercises you'll learn to directly store and extract data files stored on the Data Archive service using the dmftar tool.
 
-For the Lisa cluster, you first need to load two modules containing the tools. 
-
-For `dmftar` enter:
+Again, if not already done so, for the Lisa cluster you first need to load a module containing the tool:
 
 ```
 module load dmftar
 ```
 
-The tools are now available throughout the system and will remain so during your login session.
+The dmftar tool is now available throughout the system and will remain so during your login session.
 
 ### Exercise 5.a: Archive directly to the archive service
 
@@ -395,19 +299,13 @@ Hints:
 - Locate your home folder on the archive service first
 - Investigate how to set a destination directory for the newly created dmftar archive.
 
-##### Solution
-
-```
-dmftar -c -f /archive/<user>/data-files.dmftar data*.dat
-```
-
 ##### Questions
 
 - How can the contents be listed in the newly created file?
 
-### Exercise 5.b. Unpack directly from the archive service
+### Exercise 5.b. Unpack directly from the Data Archive service
 
-**Task: Unpack the files from the dmftar archive `data-files-extract.dmftar` located in your home folder of the archive service**
+**Task: Unpack the files from the dmftar archive `data-files-extract.dmftar` located in your home folder on the archive service**
 
 Hints:
 
@@ -415,14 +313,6 @@ Hints:
 - Locate the dmftar archive file
 - Make sure to stage the file first before unpacking it!
 - Optionally list the contents of the dmftar archive
-
-##### Solution
-
-Extraction:
-
-```
-dmftar -x -f /archive/<user>/data-files.dmftar 
-```
 
 ##### Questions
 
@@ -440,23 +330,4 @@ Hints:
  - Copy the public key to the archive system
  - Execute the dmftar tool with the right command
 
-##### Solution
-
-Create the keys:
-
-```
-ssh-keygen
-```
-
-Copy the key to the archive system:
-
-```
-ssh-copy-id <username>@archive.surfsara.nl
-```
-
-Execute dmftar:
-
-```
-dmftar -x -f <username>@archive.surfsara.nl:~/data-files-extract.dmftar
-```
 
