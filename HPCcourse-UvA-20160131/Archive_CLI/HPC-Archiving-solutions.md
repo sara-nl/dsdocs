@@ -6,6 +6,8 @@ Welcome to the hands-on part of archiving data using tar or dmftar in combinatio
 
 For all solutions holds that the used options can either be separated or combined into a single option.
 
+All solutions are working using the Lisa cluster infrastructure.
+
 ## Part 1: Basic tar usage
 
 All exercises are done in the exercise-specific directories in the `data-management/tar` folder located in your home folder on Lisa.
