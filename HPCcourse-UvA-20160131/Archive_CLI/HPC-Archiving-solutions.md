@@ -4,7 +4,7 @@
 
 Welcome to the hands-on part of archiving data using tar or dmftar in combination with the Data Archive of SURFsara. This file provides the solutions to the exercises found in [Archiving your data exercises](HPC-Archiving-exercises.md) module.
 
-For all solutions holds that the used options can be combined into a single option.
+For all solutions holds that the used options can either be separated or combined into a single option.
 
 ## Part 1: Basic tar usage
 

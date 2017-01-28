@@ -13,7 +13,7 @@ Each part has several excercises and will take approximately 10 minutes each. Fo
 
 Most exercises provide hints and additional questions to answer for yourself. Please read these carefully so you understand what you are doing!
 
-Every exercise's files are located in separate directories, e.g. the files of Exercise 1 are stored in folder `~/data-management/tar/exercise-1`, while the files of Exercise 4 are stored in `~/data-management/dmftar/exercise-4`. Make sure to go to these folders before starting the respective exercises. All files on the archive service are stored in your the `data-management` folder in your home folder (i.e. `/archive/<username>/data-management`).
+Every exercise's files are located in separate directories, e.g. the files of Exercise 1 are stored in folder `~/data-management/tar/exercise-1`, while the files of Exercise 4 are stored in `~/data-management/dmftar/exercise-4`. Make sure to go to these folders before starting the respective exercises. All files on the archive service are stored in the `data-management` folder located in your home folder (i.e. `/archive/<username>/data-management`).
 
 #### General command syntax
 
