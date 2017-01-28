@@ -13,7 +13,7 @@ Each part has several excercises and will take approximately 10 minutes each. Fo
 
 Most exercises provide hints and additional questions to answer for yourself. Please read these carefully so you understand what you are doing!
 
-Every exercise's files are located in separate directories, e.g. the files of Exercise 1 are stored in folder `~/tar/exercise-1`, while the files of Exercise 4 are stored in `~/dmftar/exercise-4`. Make sure to go to these folders before starting the respective exercises. All files on the archive service are stored in your home folder (i.e. `/archive/<username>`).
+Every exercise's files are located in separate directories, e.g. the files of Exercise 1 are stored in folder `~/data-management/tar/exercise-1`, while the files of Exercise 4 are stored in `~/data-management/dmftar/exercise-4`. Make sure to go to these folders before starting the respective exercises. All files on the archive service are stored in your the `data-management` folder in your home folder (i.e. `/archive/<username>/data-management`).
 
 #### General command syntax
 
@@ -34,7 +34,7 @@ Learn how to explore the basic options of tar and to pack a file or directory.
 
 The tar tool is invoked by entering `tar` as a command, and is available to all users and in all directories.
 
-First go to the tar excercise directory `~/tar/exercise-1` and inspect its contents.
+First go to the tar excercise directory `~/data-management/tar/exercise-1` and inspect its contents.
 
 ### Exercise 1.a: The options of tar
 
@@ -156,13 +156,15 @@ Hint: look for an option that changes the directory.
 
 Learn how to pack directory contents using the dmftar tool. dmftar is only available on the archive, Cartesius and Lisa services.
 
+dmftar can easily and automatically process the contents of entire directories compared to the more elaborate options of tar required to achieve this. Therefore the tool is mostly used to pack individual directories stored to or from the Data Archive.
+
 The dmftar tool is invoked by entering `dmftar` as a command. It is available to all users and in all directories. On the Lisa cluster, you need to load it as a module first:
 
 ```
 module load dmftar
 ```
 
-Now go to the data directory for the dmftar excercises (`~/dmftar`) and inspect its contents.
+Now go to the data directory for the dmftar excercises (`~/data-management/dmftar`) and inspect its contents.
 
 ### Exercise 3.a. Show the options of dmftar
 
@@ -181,8 +183,6 @@ Hint: add an option to the command in order to list the possibilities of the too
 ### Exercise 3.b. Pack a directory
 
 **Task: Pack the directory `data` in into a dmftar archive called `data.dmftar`**
-
-dmftar can easily process the contents of entire directories compared to the more file-oriented nature of tar. Therefore the tool is mostly used to pack individual directories.
 
 Hint: look for the create option.
 
@@ -209,7 +209,7 @@ To understand the actual contents of a dmftar archive it is useful to have a loo
 
 An important aspect of data archiving is data integrity. The archiving facility of SURFsara automatically checks the data stored on tape by comparing files every once in a while.
 
-Archived folders created using dmftar can be verified based on a checksum that is stored within it.
+Archived folders created using dmftar can be verified based on a checksum that is stored within the dmftar archive.
 
 Hint: look for the verify option.
 
@@ -311,8 +311,7 @@ Hints:
 
 - If required, load the correct modules first
 - Locate the dmftar archive file
-- Make sure to stage the file first before unpacking it!
-- Optionally list the contents of the dmftar archive
+- Optionally list the contents of the dmftar archive to see what it contains
 
 ##### Questions
 
