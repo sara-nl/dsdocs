@@ -1,9 +1,14 @@
-#Demo: Archive usage via Cyberduck
-To transfer data to the Archive using Cyberduck, you first need to install the software. Cyberduck is only avaiable for windows and Mac machines.
+#Demo: Archive usage via GUI
+To transfer data to the Archive you first need to install Cyberduck (Mac & Windows) or Filezilla (Linux). 
+In this manual we use Cyberduck to transfer data to/from the archive. Cyberduck is an open source client that supports FTP and SFTP, WebDAV availble for macOS and Windows. Before transferring data you first need to download and install the software. 
 
-- Go to **https://cyberduck.io/?l=en**
+- Go to **http://cyberduck.io/**
 - Download the software for your machine (Windown or Mac) 
-- Open Cyberduck
+- Install and Open Cyberduck
+ 
+For linux systems, you can download and install FileZilla from: 
+
+- https://filezilla-project.org/ 
 
 ## Access Archive
 To access Archive via Cyberduck:
@@ -15,7 +20,7 @@ To access Archive via Cyberduck:
 	- Connection type (at the top of the screen): **SFTP (SSH file transfer protocol)**
 	- Server: **archive.surfsara.nl** 
 	- Port **22** 
-	- Enter your user name and password
+	- Enter your user name (sdemo<0XX>) and password
 	- Do not enable 'Anonymous Login'
 	- Enabling 'Add to Keychain' lets the program remember your settings. Whether you want this is up to you.
 	- Click on 'connect'
