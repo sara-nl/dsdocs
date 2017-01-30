@@ -325,7 +325,7 @@ Hints:
 
 - What command can now be omitted when using dmftar compared to tar?
 
-### Bonus excercise: using dmftar with remote servers
+### Bonus part: using dmftar with remote servers
 **Task: Unpack the files from the dmftar archive `data-files-extract.dmftar` located on the archive service using the remote path `archive.surfsara.nl`**
 
 The dmftar tool can be used in combination with the archive service without a mounted folder. In order to do so first key-based authentication needs to be set up between your computer system and the archive.
@@ -336,5 +336,3 @@ Hints:
  - Create a new private-public key pair
  - Copy the public key to the archive system
  - Execute the dmftar tool with the right command
-
-
