@@ -1,7 +1,7 @@
 # Hands-on: Archiving your data
 
 ## Data Management - UvA HPC Course
-####Trainers: Narges Zarrabi (SURFsara), Arthur Newton (SURFsara)
+#### Trainers: Narges Zarrabi (SURFsara), Arthur Newton (SURFsara)
 
 ## Introduction
 
@@ -56,7 +56,7 @@ List the files in the directory you just copied to your archive:
 ls -l /archive/<username>/data-management/
 ```
 
-###DMF commands
+### DMF commands
 
 DMF (Data Migration Facility) is a hierarchical storage management system for Silicon Graphics environments. Its primary purpose is to augment the economic value of storage media and stored data.
 
@@ -400,6 +400,7 @@ dmftar -c -f /archive/<username>/data-management/data.dmftar files/
 
 Lets unpack the dmftar file `data-files-extract.dmftar` directly from the archive.
 
+**Solution:** 
 ```
 dmftar -x -f /archive/<username>/data-management/data-files-extract.dmftar
 ```
