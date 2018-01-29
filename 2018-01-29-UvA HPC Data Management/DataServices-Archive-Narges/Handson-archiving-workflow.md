@@ -1,7 +1,7 @@
 # Hands-on: Archiving your data
 
 ## Data Management - UvA HPC Course
-#### Trainers: Narges Zarrabi (SURFsara), Arthur Newton (SURFsara)
+#### Trainers: Narges Zarrabi (SURFsara), Arthur Newton (SURFsara), Hans van Piggelen (SURFsara)
 
 ## Introduction
 
@@ -58,7 +58,7 @@ ls -l /archive/<username>/data-management/
 
 ### DMF commands
 
-DMF (Data Migration Facility) is a hierarchical storage management system for Silicon Graphics environments. Its primary purpose is to augment the economic value of storage media and stored data.
+DMF (Data Migration Facility) is a hierarchical storage management system for Silicon Graphics environments. Its primary purpose is to augment the economic value of storage media and stored data. DMF commands ate Tape aware and facilitate staging data from tape and putting data on tape.
 
 If you are handling really large amounts of data, the DMF utilities come in useful. On Lisa and Cartesius the DMF utilities are system-wide installed.
 
